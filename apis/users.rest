@@ -1,24 +1,28 @@
-GET https://prisma-supabase-vercel.vercel.app/users HTTP/1.1
+GET https://api.finitecode.in/users HTTP/1.1
 content-type: application/json
 
 ###
-GET https://prisma-supabase-vercel.vercel.app/users/1 HTTP/1.1
+GET http://127.0.0.1:8080/v1/users HTTP/1.1
 content-type: application/json
 
 ###
-POST https://prisma-supabase-vercel.vercel.app/users HTTP/1.1
+GET https://api.finitecode.in/users/1 HTTP/1.1
+content-type: application/json
+
+###
+POST https://api.finitecode.in/users HTTP/1.1
 content-type: application/json
 
 {
     
     "created_at": "2024-12-28T07:53:41.300Z",
-    "username": "admin1",
-    "password": "admin",
-    "email": "admin1@finitecode.in"
+    "username": "admin3",
+    "password": "admin3",
+    "email": "admin3@finitecode.in"
 }
 
 ###
-PUT https://prisma-supabase-vercel.vercel.app/users/1 HTTP/1.1
+PUT https://api.finitecode.in/users/1 HTTP/1.1
 content-type: application/json
 
 {
@@ -30,5 +34,5 @@ content-type: application/json
 }
 
 ###
-DELETE https://prisma-supabase-vercel.vercel.app/users/1 HTTP/1.1
+DELETE https://api.finitecode.in/users/1 HTTP/1.1
 content-type: application/json
