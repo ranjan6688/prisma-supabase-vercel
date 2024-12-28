@@ -1,34 +1,42 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "noImplicitAny": true,
-    "sourceMap": true,
-    "outDir": "dist",
-    "baseUrl": ".",
-    "paths": {
-      "*": ["node_modules/*", "src/types/*"]
-    },
-    "lib": ["es2023"],
-    "module": "Node16",
-    "target": "es2022",
-
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
+    "baseUrl": "./",
+    "outDir": "./dist",
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node16",
-    "strictNullChecks": false
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "ESNext",
+    "module": "CommonJS",
+    "useDefineForClassFields": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "lib": [
+      "es2020",
+      "ES2022"
+    ]
   },
   "ts-node": {
-    // Tell ts-node CLI to install the --loader automatically
-    "esm": true,
-    "experimentalSpecifierResolution": "node"
+      // Tell ts-node CLI to install the --loader automatically
+      "esm": true,
+      "experimentalSpecifierResolution": "node",
   },
   "exclude": [
-    "node_modules/**/*",
-    "web/**/*",
-    "test/**/*",
-    "dist/**/*"
-  ],
+      "node_modules/**/*",
+      "web/**/*",
+      "test/**/*",
+      "prisma/**/*",
+      "dist/**/*"
+  ],  
   "include": ["./src/**/*"]
 }

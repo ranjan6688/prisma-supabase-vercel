@@ -15,7 +15,7 @@ async function main() {
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
 
-    app.get('/users', async (req, res) => {
+    app.get('/users', async (req: Request, res: Response) => {
 
         try {
             const users = await prisma.users.findMany({
@@ -29,7 +29,7 @@ async function main() {
         }
     });
 
-    app.get('/users/:id', async (req, res) => {
+    app.get('/users/:id', async (req: Request, res: Response) => {
         try {
             const { id } = req.params;
             const users = await prisma.users.findUnique({
@@ -44,7 +44,7 @@ async function main() {
         }
     });
 
-    app.post('/users', async (req, res) => {
+    app.post('/users', async (req: Request, res: Response) => {
 
         try {
             const { username, password, email, created_at } = req.body;
@@ -62,7 +62,7 @@ async function main() {
         }
     });
 
-    app.put('/users/:id', async (req, res) => {
+    app.put('/users/:id', async (req: Request, res: Response) => {
         try {
             const { id } = req.params;
             const { username, password, email, created_at } = req.body;
@@ -84,12 +84,13 @@ async function main() {
         }
     });
 
-    app.delete('/users/:id', async (req, res) => {
+    app.delete('/users/:id', async (req: Request, res: Response) => {
         try {
             const { id } = req.params;
             const users = await prisma.users.update({
                 where: {
                     id: Number(id),
+                    status: 1
                 },
                 data: {
                     status: 0
