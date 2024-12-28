@@ -30,5 +30,5 @@
     "test/**/*",
     "dist/**/*"
   ],
-  "include": []
+  "include": ["./src/**/*"]
 }
