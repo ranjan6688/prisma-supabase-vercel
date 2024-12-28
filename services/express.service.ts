@@ -42,11 +42,11 @@ export class ExpressService{
     }
 
     private static initLogs(){
-        this.app.use(`/${process.env.APPLICATION_NAME}/logs`, express.static(path.resolve(process.cwd(), "logs")), serveindex(path.resolve(process.cwd(), "logs"), {'icons': true}));      
+        this.app.use(`/logs`, express.static(path.resolve(process.cwd(), "logs")), serveindex(path.resolve(process.cwd(), "logs"), {'icons': true}));      
     }
 
     private static initDefaultRoutes(){  
-        this.app.use(`/${process.env.APPLICATION_NAME}`, this.router);
+        this.app.use(`/`, this.router);
     }
 
     private static initAPIRoutes(){  
