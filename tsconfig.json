@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/*", "src/types/*"]
+    },
+    "lib": ["es2023"],
+    "module": "Node16",
+    "target": "es2022",
+
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node16",
+    "strictNullChecks": false
+  },
+  "ts-node": {
+    // Tell ts-node CLI to install the --loader automatically
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  },
+  "exclude": [
+    "node_modules/**/*",
+    "web/**/*",
+    "test/**/*",
+    "dist/**/*"
+  ],
+  "include": []
+}

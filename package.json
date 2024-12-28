@@ -1,0 +1,40 @@
+{
+  "name": "prisma",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "nodemon src/index.ts",
+    "build": "rimraf dist && tsc",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "pre-commit": [
+    "ts.check",
+    "build",
+    "add-build"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/morgan": "^1.9.9",
+    "prisma": "^6.1.0",
+    "@types/node": "^20.14.9",
+    "nodemon": "^3.1.4",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^5.0.7",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.5.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.1.0",
+    "@types/express": "^5.0.0",
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "morgan": "^1.10.0",
+    "tslib": "^2.8.1"
+  }
+}
