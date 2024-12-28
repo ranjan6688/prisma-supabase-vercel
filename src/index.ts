@@ -1,3 +1,4 @@
+import { LOGGER, LoggerController } from './../controllers/logger.controller';
 import { PrismaController } from './../controllers/prisma.controller';
 import { ExpressController } from './../controllers/express.controller';
 // import express, { Request, Response } from "express";
@@ -132,10 +133,11 @@ env.config();
 //         process.exit(1);
 //     });
 
+LoggerController.init();
 ExpressController.init();
 PrismaController.init().then(() => {
-    console.log('Database connected');
+    LOGGER.log('Database connected');
 }).catch(async ex => {
-    console.error(ex);
+    LOGGER.error(ex);
     await PrismaController.deinit();
 });

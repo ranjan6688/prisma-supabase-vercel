@@ -57,6 +57,10 @@ export class LoggerService{
       return flag;
     };
 
+    public static getLoggerInstance(){
+      return this;
+    }
+
     private static configureConsoleLogger(logOptions: ConsoleLogOptions, customFormat: boolean = true){
       var logConfig: any = {
         transports: [
